@@ -4,15 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/calc01"
     tools:context=".MainActivity">
 
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/calculator"
+       android:id="@+id/tv_calculate"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       android:textSize="40sp"
+       android:layout_marginTop="20dp"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_calc"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       android:layout_marginTop="150dp"
+        android:hint="@string/first_value"
+        android:layout_marginStart="10dp"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_calc2"
+        app:layout_constraintStart_toEndOf="@id/et_calc"
+        android:layout_marginTop="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="@string/second_value"
+        android:layout_marginStart="10dp"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/tv_calc_equal"
+        app:layout_constraintStart_toEndOf="@id/et_calc2"
+        app:layout_constraintTop_toTopOf="@id/et_calc2"
+        app:layout_constraintBottom_toBottomOf="@id/et_calc2"/>
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:id="@+id/tv_calc_result"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:background="@color/blue"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/tv_calc_equal"
+        app:layout_constraintTop_toTopOf="@id/tv_calc_equal"
+        app:layout_constraintBottom_toBottomOf="@id/tv_calc_equal"/>
+<Button
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/btn_calc_add"
+    android:text="@string/sum"
+    android:layout_marginTop="40dp"
+    app:layout_constraintTop_toBottomOf="@id/tv_calc_result"
+    app:layout_constraintEnd_toEndOf="@id/tv_calc_result"
+    app:layout_constraintStart_toStartOf="@id/tv_calc_result"
+    />
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_calc_divide"
+        app:layout_constraintTop_toBottomOf="@id/btn_calc_add"
+        app:layout_constraintStart_toStartOf="@id/btn_calc_add"
+        app:layout_constraintEnd_toEndOf="@id/btn_calc_add"
+        android:text="@string/divide"/>
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_calc_minus"
+        android:text="@string/minus"
+        app:layout_constraintTop_toBottomOf="@id/btn_calc_divide"
+        app:layout_constraintEnd_toEndOf="@id/tv_calc_result"
+        app:layout_constraintStart_toStartOf="@id/tv_calc_result"
+        />
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_calc_increase"
+        app:layout_constraintTop_toBottomOf="@id/btn_calc_minus"
+        app:layout_constraintStart_toStartOf="@id/btn_calc_add"
+        app:layout_constraintEnd_toEndOf="@id/btn_calc_add"
+        android:text="@string/increase"/>
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_calc_percent"
+        android:text="@string/percent"
+        app:layout_constraintTop_toBottomOf="@id/btn_calc_increase"
+        app:layout_constraintEnd_toEndOf="@id/btn_calc_increase"/>
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_calc_equation"
+       app:layout_constraintEnd_toEndOf="@id/btn_calc_percent"
+        app:layout_constraintTop_toBottomOf="@id/btn_calc_percent"
+        android:text="@string/ax_2_bx"/>
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_calc_square_root"
+       app:layout_constraintEnd_toEndOf="@id/btn_calc_equation"
+        app:layout_constraintTop_toBottomOf="@id/btn_calc_equation"
+        android:text="@string/square_root"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
